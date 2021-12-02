@@ -15,6 +15,9 @@
             @foreach ($productos as $producto)
             <tr>
                 <th scope="row">{{$producto->id}}</th>
+                <th>
+                    <img style="width: 40px;height: 40px" src="{{Storage::disk('public')->url($producto->foto)}}" alt="">
+                </th>
                 <td></td>
                 <td>{{$producto->nombre}}</td>
                 <td>{{$producto->cantidad}}</td>
@@ -25,6 +28,7 @@
 
 
                     <a href="{{route('delete',$producto) }}"  data-toggle="tooltip" data-placement="right" title="Eliminar"  class="btn btn-danger btn-sm"> <i class="fa fa-blender"></i></a>
+                    <a href="{{route('see',$producto) }}"  data-toggle="tooltip" data-placement="right" title="Ver"  class="btn btn-info btn-sm"> <i class="fa fa-address-card"></i></a>
                 </td>
               </tr>
 
